@@ -11,7 +11,7 @@
 :root {
   --background: #000000;
   --foreground: #ffffff;
-  --primary: #ffffff;
+  --primary: #8b5cf6;
   --accent: #00ffff;
 }
 
@@ -33,6 +33,7 @@
   background-clip: text;
   color: transparent;
   animation: gradient-flow 5s linear infinite;
+  will-change: background-position;
 }
 
 @keyframes gradient-flow {
@@ -58,6 +59,8 @@ body {
     linear-gradient(rgba(139, 92, 246, 0.05) 1px, transparent 1px),
     linear-gradient(90deg, rgba(139, 92, 246, 0.05) 1px, transparent 1px);
   background-size: 40px 40px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
 }
 
 .neo-box {
@@ -65,7 +68,7 @@ body {
   color: black;
   border: 2px solid black;
   box-shadow: 4px 4px 0px 0px var(--primary);
-  transition: all 0.2s ease;
+  transition: all 0.2s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .neo-box:hover {
@@ -74,16 +77,17 @@ body {
 }
 
 .neo-button {
-  background: var(--primary);
-  color: white;
+  background: white;
+  color: black;
   border: 2px solid black;
-  box-shadow: 4px 4px 0px 0px black;
-  transition: all 0.1s ease;
+  box-shadow: 4px 4px 0px 0px var(--primary);
+  transition: all 0.2s cubic-bezier(0.23, 1, 0.32, 1);
+  will-change: transform, box-shadow;
 }
 
 .neo-button:hover {
   transform: translate(2px, 2px);
-  box-shadow: 0px 0px 0px 0px black;
+  box-shadow: 0px 0px 0px 0px var(--primary);
 }
 
 .glass {

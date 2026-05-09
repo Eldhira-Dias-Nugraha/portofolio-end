@@ -175,13 +175,13 @@ export default function Hero() {
           style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
           onMouseMove={handleMouseMove}
           onMouseLeave={handleMouseLeave}
-          className="relative flex justify-center lg:justify-end perspective-1000 order-1 lg:order-2 group py-10 lg:py-0"
+          className="relative flex justify-center lg:justify-end perspective-1000 order-1 lg:order-2 group py-10 lg:py-0 will-change-transform"
         >
           {/* Main 3D Box */}
           <div className="relative w-[280px] sm:w-[320px] md:w-[450px] lg:w-[550px] h-[350px] sm:h-[400px] md:h-[550px] lg:h-[650px]" style={{ transformStyle: "preserve-3d" }}>
             
             {/* Front Face */}
-            <div className="absolute inset-0 bg-slate-900 border-2 border-white/20 rounded-[2rem] md:rounded-[3rem] overflow-hidden z-10 shadow-2xl" style={{ transform: isMobile ? "translateZ(20px)" : "translateZ(40px)" }}>
+            <div className="absolute inset-0 bg-slate-900 border-2 border-white/20 rounded-[2rem] md:rounded-[3rem] overflow-hidden z-10 shadow-2xl will-change-transform" style={{ transform: isMobile ? "translateZ(20px)" : "translateZ(40px)" }}>
               <Image src="/assets/logo/L.png" alt="Eldhira Dias" fill className="object-cover group-hover:scale-110 transition-transform duration-1000" priority />
               <div className="absolute bottom-6 md:bottom-10 left-1/2 -translate-x-1/2 w-[85%] bg-black/70 border border-white/10 py-3 md:py-6 px-4 md:px-8 rounded-xl md:rounded-[2rem] text-center shadow-2xl backdrop-blur-2xl">
                 <h3 className="text-xl md:text-3xl lg:text-5xl font-nagasaki tracking-wider text-white uppercase italic">Eldhira Dias</h3>
@@ -189,11 +189,11 @@ export default function Hero() {
             </div>
 
             {/* Side Faces (Scaled for Mobile) */}
-            <div className="absolute inset-0 bg-slate-800 border-2 border-white/5 rounded-[2rem] md:rounded-[3rem]" style={{ transform: isMobile ? "translateZ(-20px) rotateY(180deg)" : "translateZ(-40px) rotateY(180deg)" }} />
-            <div className="absolute top-0 left-[2rem] right-[2rem] h-[40px] md:h-[80px] bg-white/5 border-x border-white/10" style={{ transform: `rotateX(90deg) translateY(${isMobile ? '-20px' : '-40px'})` }} />
-            <div className="absolute bottom-0 left-[2rem] right-[2rem] h-[40px] md:h-[80px] bg-black/80 border-x border-white/10" style={{ transform: `rotateX(-90deg) translateY(${isMobile ? '20px' : '40px'})` }} />
-            <div className="absolute right-0 top-[2rem] bottom-[2rem] w-[40px] md:w-[80px] bg-white/5 border-y border-white/10" style={{ transform: `rotateY(90deg) translateX(${isMobile ? '20px' : '40px'})` }} />
-            <div className="absolute left-0 top-[2rem] bottom-[2rem] w-[40px] md:w-[80px] bg-black/80 border-y border-white/10" style={{ transform: `rotateY(-90deg) translateX(${isMobile ? '-20px' : '-40px'})` }} />
+            <div className="absolute inset-0 bg-slate-800 border-2 border-white/5 rounded-[2rem] md:rounded-[3rem] will-change-transform" style={{ transform: isMobile ? "translateZ(-20px) rotateY(180deg)" : "translateZ(-40px) rotateY(180deg)" }} />
+            <div className="absolute top-0 left-[2rem] right-[2rem] h-[40px] md:h-[80px] bg-white/5 border-x border-white/10 will-change-transform" style={{ transform: `rotateX(90deg) translateY(${isMobile ? '-20px' : '-40px'})` }} />
+            <div className="absolute bottom-0 left-[2rem] right-[2rem] h-[40px] md:h-[80px] bg-black/80 border-x border-white/10 will-change-transform" style={{ transform: `rotateX(-90deg) translateY(${isMobile ? '20px' : '40px'})` }} />
+            <div className="absolute right-0 top-[2rem] bottom-[2rem] w-[40px] md:w-[80px] bg-white/5 border-y border-white/10 will-change-transform" style={{ transform: `rotateY(90deg) translateX(${isMobile ? '20px' : '40px'})` }} />
+            <div className="absolute left-0 top-[2rem] bottom-[2rem] w-[40px] md:w-[80px] bg-black/80 border-y border-white/10 will-change-transform" style={{ transform: `rotateY(-90deg) translateX(${isMobile ? '-20px' : '-40px'})` }} />
           </div>
         </motion.div>
       </div>
