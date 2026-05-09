@@ -25,26 +25,23 @@ export default function Box3D({ children, side = 'left', centered = false }: Box
   const opacity = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0, 1, 1, 0]);
   const scale = useTransform(scrollYProgress, [0, 0.5, 1], [0.8, 1, 0.8]);
 
-  const springZ = useSpring(z, { stiffness: 50, damping: 20 });
-  const springRotateX = useSpring(rotateX, { stiffness: 50, damping: 20 });
-  const springRotateY = useSpring(rotateY, { stiffness: 50, damping: 20 });
-
   return (
-    <div ref={ref} className="py-40 flex justify-center w-full perspective-[1500px]">
+    <div 
+      ref={ref} 
+      className={`relative w-full overflow-hidden md:overflow-visible py-10 md:py-20 ${centered ? 'flex justify-center' : ''} will-change-transform`}
+    >
       <motion.div
         style={{
-          z: springZ,
-          rotateX: springRotateX,
-          rotateY: springRotateY,
-          scale,
+          z,
+          rotateX,
+          rotateY,
           opacity,
+          scale,
           transformStyle: "preserve-3d",
         }}
-        className={`w-full max-w-7xl flex ${centered ? 'justify-center' : (side === 'left' ? 'justify-start' : 'justify-end')} px-6 md:px-10`}
+        className={`w-full ${centered ? 'max-w-7xl' : 'max-w-6xl'} ${side === 'right' ? 'ml-auto' : ''} will-change-transform`}
       >
-        <div className={`w-full ${centered ? 'md:w-full' : 'md:w-[60%]'}`}>
-          {children}
-        </div>
+        {children}
       </motion.div>
     </div>
   );

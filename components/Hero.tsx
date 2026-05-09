@@ -145,10 +145,10 @@ export default function Hero() {
 
           <div className="flex flex-col gap-6 pt-4 items-center lg:items-start">
             <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-              <a href="https://www.linkedin.com/in/eldhiradias/" target="_blank" className="neo-button bg-white text-black px-10 py-4 font-black text-lg flex items-center justify-center gap-2">
+              <a href="https://www.linkedin.com/in/eldhiradias/" target="_blank" className="bg-purple-600 text-white px-10 py-4 font-black text-lg flex items-center justify-center gap-2 rounded-xl hover:bg-purple-500 transition-all shadow-[4px_4px_0px_0px_rgba(255,255,255,0.2)]">
                 Chat Me
               </a>
-              <a href="https://github.com/Eldhira-Dias-Nugraha" target="_blank" className="bg-transparent border-2 border-white/20 text-white px-10 py-4 font-black text-lg hover:bg-white/10 transition-all flex items-center justify-center gap-2">
+              <a href="https://github.com/Eldhira-Dias-Nugraha" target="_blank" className="bg-white text-black px-10 py-4 font-black text-lg hover:bg-slate-200 transition-all flex items-center justify-center gap-2 rounded-xl shadow-[4px_4px_0px_0px_rgba(139,92,246,0.5)]">
                 <GithubIcon size={18} /> Github
               </a>
             </div>

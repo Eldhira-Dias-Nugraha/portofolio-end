@@ -53,9 +53,6 @@ export default function Home() {
         </section>
       </Box3D>
 
-      <footer className="py-10 border-t border-purple-900/20 text-center text-gray-500 text-sm">
-        <p>© 2025 Creative Portfolio. Built with Next.js & Tailwind CSS.</p>
-      </footer>
     </div>
   );
 }
