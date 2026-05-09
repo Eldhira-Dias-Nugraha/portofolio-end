@@ -3,14 +3,16 @@
 
 Write-Host "Sedang memulai proses upload ke GitHub..." -ForegroundColor Cyan
 
-# Inisialisasi Git
-git init
+# Inisialisasi Git jika belum
+if (!(Test-Path .git)) {
+    git init
+}
 
 # Tambahkan semua file
 git add .
 
-# Simpan perubahan
-git commit -m "Final High-Fidelity 3D Portfolio with Roadmap and Certificates"
+# Simpan perubahan dengan pesan yang lebih spesifik
+git commit -m "Enhance responsiveness, mobile 3D optimization, and navbar smooth scroll"
 
 # Set branch utama ke main
 git branch -M main
@@ -23,5 +25,5 @@ git remote add origin https://github.com/Eldhira-Dias-Nugraha/portofolio-end.git
 Write-Host "Sedang mengunggah file ke GitHub (Push)..." -ForegroundColor Yellow
 git push -u origin main
 
-Write-Host "`nSelesai! Website Anda sekarang sudah ada di GitHub." -ForegroundColor Green
+Write-Host "`nSelesai! Update terbaru sudah ada di GitHub." -ForegroundColor Green
 Write-Host "Link: https://github.com/Eldhira-Dias-Nugraha/portofolio-end" -ForegroundColor Cyan
