@@ -64,8 +64,8 @@ export default function Experience() {
                   `} />
                   
                   <div className="flex flex-col gap-2 md:gap-3 mb-6 md:mb-8">
-                    <span className="text-[10px] md:text-xs font-mono text-purple-400 font-bold tracking-[0.3em] uppercase">{exp.period}</span>
-                    <h3 className="text-2xl md:text-5xl font-nagasaki text-white group-hover:text-purple-400 transition-colors uppercase italic leading-tight">{exp.role}</h3>
+                    <span className="text-[10px] md:text-xs font-mono text-white/40 font-bold tracking-[0.3em] uppercase">{exp.period}</span>
+                    <h3 className="text-2xl md:text-5xl font-nagasaki text-purple-400 uppercase italic leading-tight">{exp.role}</h3>
                   </div>
                   
                   <h4 className="text-base md:text-xl font-bold mb-4 md:mb-6 flex items-center gap-3 text-white/80">

@@ -23,9 +23,9 @@ export default function Box3D({ children, side = 'left', centered = false }: Box
   const rotateX = useTransform(scrollYProgress, [0, 0.5, 1], isMobile ? [10, 0, -10] : [20, 0, -20]);
   const rotateY = useTransform(scrollYProgress, [0, 0.5, 1], centered ? [0, 0, 0] : (side === 'left' ? (isMobile ? [-8, 0, 8] : [-15, 0, 15]) : (isMobile ? [8, 0, -8] : [15, 0, -15])));
   
-  // Keep opacity at 1 once it fades in, don't fade out at the bottom
-  const opacity = useTransform(scrollYProgress, [0, 0.2], [0, 1]);
-  const scale = useTransform(scrollYProgress, [0, 0.5], [0.9, 1]);
+  // Keep content fully visible immediately
+  const opacity = 1;
+  const scale = useTransform(scrollYProgress, [0, 0.5, 1], [1, 1.05, 1]);
 
   return (
     <div 
