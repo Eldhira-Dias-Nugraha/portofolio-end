@@ -1,26 +1,109 @@
 @import "tailwindcss";
 
+@theme {
+  --color-background: #0f172a;
+  --color-foreground: #ffffff;
+  --color-primary: #8b5cf6;
+  --color-accent: #c084fc;
+  --color-neo-shadow: #000000;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #000000;
+  --foreground: #ffffff;
+  --primary: #ffffff;
+  --accent: #00ffff;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.font-serif-italic {
+  font-family: var(--font-serif), serif;
+  font-style: italic;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.text-gradient-animate {
+  background: linear-gradient(
+    to right,
+    #8b5cf6,
+    #d946ef,
+    #06b6d4,
+    #8b5cf6
+  );
+  background-size: 300% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: gradient-flow 5s linear infinite;
+}
+
+@keyframes gradient-flow {
+  0% { background-position: 0% center; }
+  100% { background-position: 300% center; }
+}
+
+.perspective-container {
+  perspective: 2500px;
+  overflow-x: hidden;
+}
+
+.font-nagasaki {
+  font-family: var(--font-bebas), sans-serif;
+  letter-spacing: 0.02em;
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+  background-image: 
+    linear-gradient(rgba(139, 92, 246, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(139, 92, 246, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.neo-box {
+  background: white;
+  color: black;
+  border: 2px solid black;
+  box-shadow: 4px 4px 0px 0px var(--primary);
+  transition: all 0.2s ease;
+}
+
+.neo-box:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 0px 0px 0px 0px var(--primary);
+}
+
+.neo-button {
+  background: var(--primary);
+  color: white;
+  border: 2px solid black;
+  box-shadow: 4px 4px 0px 0px black;
+  transition: all 0.1s ease;
+}
+
+.neo-button:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 0px 0px 0px 0px black;
+}
+
+.glass {
+  background: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.text-gradient {
+  background: linear-gradient(to right, #c084fc, #8b5cf6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.timeline-dot {
+  width: 12px;
+  height: 12px;
+  background: var(--primary);
+  border: 2px solid black;
+  box-shadow: 2px 2px 0px 0px black;
+  border-radius: 50%;
 }
